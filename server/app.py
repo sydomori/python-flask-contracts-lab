@@ -16,7 +16,7 @@ def contract(id):
 @app.route('/customer/<customer_name>')
 def customer(customer_name):
     if customer_name in customers:
-        return f"Customer found, no information(it's sensitive!)", 200
+        return f"Customer found, no information(it's sensitive!)", 204
     return "Customer not found", 404
 
 
