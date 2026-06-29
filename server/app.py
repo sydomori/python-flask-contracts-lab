@@ -13,5 +13,12 @@ def contract(id):
             return f"Contract found: {contract['contract_information']}", 200
     return "Contract not found", 404
 
+@app.route('/customer/<customer_name>')
+def customer(customer_name):
+    if customer_name in customers:
+        return f"Customer found, no information(it's sensitive!)", 200
+    return "Customer not found", 404
+
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
